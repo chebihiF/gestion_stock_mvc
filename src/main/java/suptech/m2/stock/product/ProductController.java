@@ -22,7 +22,7 @@ public class ProductController {
     @GetMapping
     public String getProducts(Model model){
         try {
-            Page<Product> products = productService.getProducts(PageRequest.of(1,10));
+            Page<Product> products = productService.getProducts(PageRequest.of(0,10));
             model.addAttribute("products",products);
         }catch (RuntimeException exception){
             model.addAttribute("error", exception.getMessage());
