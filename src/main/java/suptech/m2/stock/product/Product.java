@@ -12,7 +12,6 @@ import java.time.LocalDate;
 public class Product {
     @Id @Column(length = 20)
     private String ref ;
-    @Column(unique = true)
     private String label ;
     private LocalDate creation_date;
     private String description ;
