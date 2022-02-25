@@ -16,7 +16,6 @@ public class ProductConfig {
         this.productService = productService;
     }
 
-    @Bean
     public CommandLineRunner initProduct() {
         return args -> {
             try {

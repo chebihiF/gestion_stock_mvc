@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www/ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="template"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products list</title>
+
+</head>
+<body>
+    <div layout:fragment="page_content">
+        <div class="container">
+            <form th:action="@{saveProduct}" method="post">
+                <div class="form-group">
+                    <label class="control-label">Reference</label>
+                    <input type="text" class="form-control" name="ref" th:value="${product.ref}"/>
+                    <span  th:errors="${product.ref}"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Label</label>
+                    <input type="text" class="form-control" name="label" th:value="${product.label}"/>
+                    <span  th:errors="${product.label}"></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Creation Date</label>
+                    <input type="date" class="form-control" name="creation_date" th:value="${product.creation_date}"/>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Description</label>
+                    <input type="text" class="form-control" name="description" th:value="${product.description}"/>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Price</label>
+                    <input type="number" class="form-control" name="price" th:value="${product.price}"/>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Quantity</label>
+                    <input type="number" class="form-control" name="quantity" th:value="${product.quantity}"/>
+                    <span></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

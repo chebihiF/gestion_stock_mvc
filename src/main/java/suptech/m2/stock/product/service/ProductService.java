@@ -29,7 +29,7 @@ public class ProductService implements IProductService{
     public Page<Product> getProductsByLabel(String label,Pageable pageable) throws RuntimeException{
         if(label!=null && !label.trim().equals(""))
             //return productRepository.findProductByLabel(label,pageable);
-            return productRepository.findByLabelLike(label,pageable);
+            return productRepository.findByLabelContains(label,pageable);
         throw new RuntimeException("label must be non null");
     }
 }
